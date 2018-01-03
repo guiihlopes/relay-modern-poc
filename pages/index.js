@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-relay'
 import withData from '../lib/withData'
-import BlogPosts from '../components/BlogPosts'
+import Cargos from '../components/Cargos'
 
 class Index extends Component {
   static displayName = `Index`
 
-  render (props) {
+  render(props) {
     return (
       <div>
-        <BlogPosts viewer={this.props.viewer} />
+        <Cargos viewer={this.props.listarCargos} />
       </div>
     )
   }
@@ -18,9 +18,11 @@ class Index extends Component {
 export default withData(Index, {
   query: graphql`
         query pages_indexQuery {
-            viewer {
-                ...BlogPosts_viewer
-            }
+            listarCargos {
+          titulo,
+            descricao,
+            id,
+          }
         }
     `
 })

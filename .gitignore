@@ -7,3 +7,6 @@ coverage
 static/.DS_Store
 package-lock.json
 .vscode/
+__generated__/
+.next/
+schema/
